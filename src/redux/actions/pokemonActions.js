@@ -3,7 +3,7 @@ import {
   FETCH_POKEMON_DETAIL,
   ADD_POKEMON_FAVORITE,
 } from "../actionsType/pokemonType";
-import axios from "../../Api/pokemonApi";
+import axios from "../../APIs/pokemonApi";
 
 const fetchPokemon = () => async (dispatch) => {
   try {
@@ -11,7 +11,7 @@ const fetchPokemon = () => async (dispatch) => {
       method: "get",
       url: "/pokemon?limit=100&offset=200",
     });
-    console.log("ini response", response);
+    // console.log("ini response", response);
     dispatch({
       type: FETCH_POKEMON,
       payload: response.data,
