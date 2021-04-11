@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import pokemonAction from "../redux/actions/pokemonActions";
-import styled from "styled-components";
+// import styled from "styled-components";
 
 const Pokemon = () => {
   const [search, setSearch] = useState("");
@@ -27,22 +27,22 @@ const Pokemon = () => {
     setSearch(e.target.value);
   };
 
-  const FavButton = styled.button`
-    cursor: pointer;
-    background: transparent;
-    font-size: 14px;
-    border-radius: 5px;
-    border: 3px solid #c1292e;
-    padding: 0.25em 0.5em;
-    transition: 0.2s all ease-out;
-    color: #c1292e;
-    font-weight: bold;
+  // const FavButton = styled.button`
+  //   cursor: pointer;
+  //   background: transparent;
+  //   font-size: 14px;
+  //   border-radius: 5px;
+  //   border: 3px solid #c1292e;
+  //   padding: 0.25em 0.5em;
+  //   transition: 0.2s all ease-out;
+  //   color: #c1292e;
+  //   font-weight: bold;
 
-    &:hover {
-      background-color: #c1292e;
-      color: #f4f4f6;
-    }
-  `;
+  //   &:hover {
+  //     background-color: #c1292e;
+  //     color: #f4f4f6;
+  //   }
+  // `;
 
   return (
     <>

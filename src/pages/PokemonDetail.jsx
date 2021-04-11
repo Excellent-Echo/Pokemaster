@@ -111,8 +111,8 @@ const PokemonDetail = () => {
                   })}
               </div>
               {/* <div className="row">
-                <div class="card">
-                  <div class="card-body">
+                <div className="card">
+                  <div className="card-body">
                     This is some text within a card body.
                   </div>
                 </div>
@@ -120,7 +120,7 @@ const PokemonDetail = () => {
               <button
                 onClick={() => handleClick(listPokemonDetail)}
                 type="button"
-                class="btn btn-primary"
+                className="btn btn-primary"
               >
                 Add Favorite
               </button>
