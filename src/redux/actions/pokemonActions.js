@@ -9,7 +9,7 @@ const fetchPokemon = () => async (dispatch) => {
   try {
     const response = await axios({
       method: "get",
-      url: "/pokemon",
+      url: "/pokemon?limit=100&offset=200",
     });
     console.log("ini response", response);
     dispatch({
