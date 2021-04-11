@@ -34,6 +34,9 @@ const FormLogin = ({submitForm}) => {
                  />
                  {errors.password && <p>{errors.password}</p>}
                  <br/>
+                 <button type="submit">
+                    Submit
+                </button>
             </form>
         </div>
     )
