@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import pokemonAction from "../redux/actions/pokemonActions";
-// import styled from "styled-components";
+import styled from "styled-components";
 
 const Pokemon = () => {
   const [search, setSearch] = useState("");
