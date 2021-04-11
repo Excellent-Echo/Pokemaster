@@ -28,7 +28,8 @@ const PokemonDetail = () => {
   }
 
   return (
-    <div>
+    <>
+    {/* <div>
       <div>
         <h2>Name : {listPokemonDetail.name}</h2>
         <h2>base_experience: {listPokemonDetail.base_experience}</h2>
@@ -43,7 +44,65 @@ const PokemonDetail = () => {
         <h4>3. kalau bisa dipanggi aja pakai map yg bentuk array of object</h4>
         <h4>4. kalau belum bisa gpp layout aja nanti aku mapping sendiri</h4>
       </div>
+    </div> */}
+    <div className="container-fluid ttl-container" id="grass-type">
+      <div className="container">
+        <div className="row">
+          <div className="col-md">
+            <div className="img-container">
+              <img src={`https://img.pokemondb.net/artwork/large/${listPokemonDetail.name}.jpg`} alt="" className="poke-img-dtl"/>
+            </div>
+          </div>
+          <div className="col-md dt-ttl-container">
+            <h3 className="dt-poke-id">
+              #{ listPokemonDetail.id }
+            </h3>
+            <h2 className="display-3 dt-poke-name">
+              {listPokemonDetail.name}
+            </h2>
+            <div className="row">
+              <div className="col-md">
+                <h4>
+                Type :
+                </h4>
+                <h5>
+                  <span className="badge dtl-poke" id="flying-type">
+                    Flying
+                  </span>
+                  <span className="badge dtl-poke" id="fire-type">
+                    Fire
+                  </span>
+                </h5>
+              </div>
+              <div className="col-md">
+                <h4>
+                Weakness :
+                </h4>
+                <h5>
+                  <span className="badge dtl-poke" id="water-type">
+                    Water
+                  </span>
+                  <span className="badge dtl-poke" id="electric-type">
+                    Electric
+                  </span>
+                  <span className="badge dtl-poke" id="rock-type">
+                    Rock
+                  </span>
+                </h5>               
+              </div>
+            </div>
+            <div className="row">
+              <div class="card">
+                <div class="card-body">
+                  This is some text within a card body.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+    </>
   );
 };
 
