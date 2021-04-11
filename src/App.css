@@ -1,38 +1,280 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;600;700;800;900&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #212227 !important;
+  background-color: #F4F4F6 !important;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container-fluid {
+  padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+nav {
+  background-color: #F4F4F6 !important;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navbar-brand {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 900;
+  color: #C1292E !important;
+  transition: all .2s ease-in-out;
+}
+
+.navbar-brand:hover {
+  color: #212227 !important;
+}
+
+.nav-link {
+  color: #212227 !important;
+  font-weight: 600;
+}
+
+.nav-link:hover {
+  color: #C1292E !important;
+}
+
+.ttl-container {
+  background-color: #C1292E;
+  color: #F4F4F6;
+  padding: 15vw;
+  padding-top: 25vw;
+}
+
+.title {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 900;
+}
+
+p.subtitle {
+  font-size: 23px;
+  color: #F4F4F6;
+}
+
+.src-container {
+  background-color: #212227;
+  color: #F4F4F6;
+  padding: 3vw;
+}
+
+.src-label {
+  font-family: 'Roboto Slab', serif;
+}
+
+.crd-container {
+  padding: 5vw;
+}
+
+.crd-col {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.card.poke-card {
+  margin-bottom: 30px;
+  cursor: pointer;
+  transition: 0.2s all ease-in-out;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.card.poke-card:hover {
+  transform: scale(1.05);
+}
+
+.card-title {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.img-container {
+  display: flex;
+  justify-content: center;
+}
+
+.poke-img {
+  padding: 1.5vw;
+  width: auto;
+  height: 25vh;
+}
+
+.badge {
+  margin-right: 10px;
+  padding: 7px;
+  padding-left: 13px;
+  padding-right: 13px;
+}
+
+.badge.dtl-poke {
+  margin-right: 0px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  padding: 7px;
+  padding-left: 13px;
+  padding-right: 13px;
+  border: 2px solid #F4F4F6 ;
+}
+
+.badge#electric-type {
+  background-color: #FFCB77;
+  color: #212227 !important; 
+}
+
+.badge#fire-type, .badge#fighting-type {
+  background-color: #C1292E;
+  color: #F4F4F6 !important; 
+}
+
+.badge#water-type {
+  background-color: #227C9D;
+  color: #F4F4F6 !important; 
+}
+
+.badge#dark-type {
+  background-color: #212227;
+  color: #F4F4F6 !important; 
+}
+
+.badge#fairy-type, .badge#psychic-type {
+  background-color: #FF6392;
+  color: #212227 !important; 
+}
+
+.badge#ground-type, .badge#rock-type {
+  background-color: #553D36;
+  color: #F4F4F6 !important; 
+}
+
+.badge#grass-type, .badge#bug-type {
+  background-color: #5C8001;
+  color: #212227 !important; 
+}
+
+.badge#ice-type, .badge#flying-type {
+  background-color: #90E0EF;
+  color: #212227 !important; 
+}
+
+.badge#poison-type, .badge#ghost-type {
+  background-color: #81559B;
+  color: #F4F4F6 !important; 
+}
+
+.badge#dragon-type {
+  background-color: #704E2E;
+  color: #F4F4F6 !important; 
+}
+
+.badge#steel-type, .badge#normal-type {
+  background-color: #AEA3B0;
+  color: #212227 !important; 
+}
+
+.ttl-container#electric-type {
+  background-color: #FFCB77;
+  color: #212227 !important; 
+}
+
+.ttl-container#fire-type, .ttl-container#fighting-type {
+  background-color: #C1292E;
+  color: #F4F4F6 !important; 
+}
+
+.ttl-container#water-type {
+  background-color: #227C9D;
+  color: #F4F4F6 !important; 
+}
+
+.ttl-container#dark-type {
+  background-color: #212227;
+  color: #F4F4F6 !important; 
+}
+
+.ttl-container#fairy-type, .ttl-container#psychic-type {
+  background-color: #FF6392;
+  color: #212227 !important; 
+}
+
+.ttl-container#ground-type, .ttl-container#rock-type {
+  background-color: #553D36;
+  color: #F4F4F6 !important; 
+}
+
+.ttl-container#grass-type, .ttl-container#bug-type {
+  background-color: #5C8001;
+  color: #212227 !important; 
+}
+
+.ttl-container#ice-type, .ttl-container#flying-type {
+  background-color: #90E0EF;
+  color: #212227 !important; 
+}
+
+.ttl-container#poison-type, .ttl-container#ghost-type {
+  background-color: #81559B;
+  color: #F4F4F6 !important; 
+}
+
+.ttl-container#dragon-type {
+  background-color: #704E2E;
+  color: #F4F4F6 !important; 
+}
+
+.ttl-container#steel-type, .ttl-container#normal-type {
+  background-color: #AEA3B0;
+  color: #212227 !important; 
+}
+
+.dt-ttl-container {
+  color: #F4F4F6;
+  text-align: end;
+}
+
+.dt-poke-id {
+  color: rgba(244, 244, 246, 0.5);
+}
+
+.dt-poke-name {
+  font-family: 'Roboto Slab', serif;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+.poke-img-dtl {
+  width: auto;
+  height: 350px;
+  border-radius: 20px;
+}
+
+
+
+.ftr-container {
+  background-color: #c1292e !important;
+  padding: 5px;
+  text-align: center;
+  color: #F4F4F6;
+}
+
+/* DESKTOP ONLY */
+@media (min-width: 768px) { 
+  .navbar-nav {
+    display: flex !important;
+    align-items: center !important;
   }
-  to {
-    transform: rotate(360deg);
+
+  .ttl-container {
+    padding: 15vh;
+    padding-top: 10vw;
+  }
+}
+
+.ttl-search {
+  padding-top: 5vw;
+}
+
+/* MOBILE ONLY */
+@media (max-width: 768px) { 
+  .ttl-container {
+    text-align: center;
   }
 }
