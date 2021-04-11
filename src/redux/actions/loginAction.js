@@ -20,7 +20,7 @@ import {
     }
   };
   
-  const fetchRegister = (id, email, password, name) => async (dispatch) => {
+  const fetchRegister = (id, name, email, password) => async (dispatch) => {
     try {
       const response = await axios({
         method: "get",

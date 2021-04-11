@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import { withRouter } from "react-router-dom"; 
-import FormSuccess from '../components/formSuccess';
+import { Redirect } from 'react-router-dom';
 import FormLogin from '../components/formLogin';
 
 
@@ -17,7 +17,7 @@ const Login = () => {
           {!isSubmitted ? (
             <FormLogin submitForm={submitForm} />
           ) : (
-            <FormSuccess />
+            <Redirect to="/" />
           )}
       </div>
       </>

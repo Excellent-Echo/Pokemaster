@@ -11,13 +11,13 @@ import {
     switch (action.type) {
       case FETCH_LOGIN:
         return {
-          ...state,
-          dataUserApi: action.payload,
+        ...state,
+        dataUserApi: action.payload,
         };
       case FETCH_REGISTER:
         return {
-          ...state,
-          dataUserApi: action.payload,
+        ...state,
+        dataUserApi: action.payload,
         };
       default:
         return state;
