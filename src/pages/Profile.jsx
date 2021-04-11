@@ -1,18 +1,11 @@
-import React from 'react';
-import { withRouter } from "react-router-dom";
-// import Register from './Register';
+import React from "react";
 
 const Profile = () => {
-   
-    return (
-    <>
-        <div>
-            <h1>Profile</h1>
-            {/* <span>{values.usename}</span> */}
-        </div>
+  return (
+    <div>
+      <h1>Profile</h1>
+    </div>
+  );
+};
 
-    </>
-    )
-} 
-
-export default withRouter(Profile)
+export default Profile;
