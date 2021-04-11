@@ -21,7 +21,7 @@ function App() {
         <Router>
           <Navbar />
           <Switch>
-            <Route path="/" exact={true}>
+            <Route exact path="/">
               <Pokemon />
             </Route>
             <Route path="/pokemondetail/:name">

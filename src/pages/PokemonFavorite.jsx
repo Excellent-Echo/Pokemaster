@@ -26,10 +26,10 @@ const PokemonFavorite = () => {
                   Weight : {item.weight} <br />
                   base sexperience: {item.base_experience}
                 </p>
-                <a className="btn btn-primary">Add To Battle</a>
+                <button className="btn btn-primary">Add To Battle</button>
                 <br />
                 <br />
-                <a className="btn btn-primary">Delete Favorite</a>
+                <button className="btn btn-primary">Delete Favorite</button>
               </div>
             </div>
           ))
