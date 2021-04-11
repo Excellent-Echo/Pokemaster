@@ -1,11 +1,10 @@
 import React from "react";
-
-// react router
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import "./App.css";
 
 // components
 import Navbar from "./components/navbar";
-import Footer from "./components/foot"
+import Footer from "./components/footer";
 
 // pages
 import Register from "./pages/Register";
@@ -15,13 +14,11 @@ import Pokemon from "./pages/Pokemon";
 import PokemonDetail from "./pages/PokemonDetail";
 import PokemonFavorite from "./pages/PokemonFavorite";
 
-import "./App.css";
-
 function App() {
   return (
     <>
-    <div className="container-fluid">
-      <Router>
+      <div className="container-fluid">
+        <Router>
           <Navbar />
           <Switch>
             <Route path="/" exact={true}>
@@ -43,9 +40,9 @@ function App() {
               <Profile />
             </Route>
           </Switch>
-      </Router>
-    </div>
-    <Footer />
+        </Router>
+      </div>
+      <Footer />
     </>
   );
 }
