@@ -1,26 +1,22 @@
 import React from "react";
-
-// react router
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import Login from "../pages/Login";
 
 function navbar() {
-
   const LoginButton = styled.button`
     cursor: pointer;
-    background: #C1292E;
+    background: #c1292e;
     font-size: 14px;
     border-radius: 5px;
-    border: 3px solid #C1292E;
-    padding: 0.25em 0.50em;
+    border: 3px solid #c1292e;
+    padding: 0.25em 0.5em;
     transition: 0.2s all ease-out;
-    color: #F4F4F6;
+    color: #f4f4f6;
     font-weight: bold;
 
     &:hover {
-    background-color: #F4F4F6;
-    color: #C1292E;
+      background-color: #f4f4f6;
+      color: #c1292e;
     }
   `;
 
@@ -29,40 +25,54 @@ function navbar() {
     background: transparent;
     font-size: 14px;
     border-radius: 5px;
-    border: 3px solid #C1292E;
-    padding: 0.25em 0.50em;
+    border: 3px solid #c1292e;
+    padding: 0.25em 0.5em;
     transition: 0.2s all ease-out;
-    color: #C1292E;
+    color: #c1292e;
     font-weight: bold;
 
     &:hover {
-    background-color: #C1292E;
-    color: #F4F4F6;
+      background-color: #c1292e;
+      color: #f4f4f6;
     }
   `;
 
   return (
     <div className="container-fluid">
-      <nav class="navbar fixed-top navbar-expand-lg navbar-light">
-        <div class="container">
-          <Link className="navbar-brand" to="/">Pokédex</Link>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+      <nav className="navbar fixed-top navbar-expand-lg navbar-light">
+        <div className="container">
+          <Link className="navbar-brand" to="/">
+            Pokédex
+          </Link>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item">
-                <Link className="nav-link" to="/pokemonfavorite">My Pokémon</Link>
-              </li>
-              <li class="nav-item">
-                <Link className="nav-link" to="/profile">Profile</Link>
+          <div className="collapse navbar-collapse" id="navbarNav">
+            <ul className="navbar-nav ms-auto">
+              <li className="nav-item">
+                <Link className="nav-link" to="/pokemonfavorite">
+                  My Pokémon
+                </Link>
               </li>
               <li className="nav-item">
-              <Link className="nav-link" to="/register">
-                <RegisButton>Register</RegisButton>
-              </Link>
+                <Link className="nav-link" to="/profile">
+                  Profile
+                </Link>
               </li>
-              <li class="nav-item">
+              <li className="nav-item">
+                <Link className="nav-link" to="/register">
+                  <RegisButton>Register</RegisButton>
+                </Link>
+              </li>
+              <li className="nav-item">
                 <Link className="nav-link" to="/login">
                   <LoginButton>Login</LoginButton>
                 </Link>

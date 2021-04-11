@@ -1,16 +1,8 @@
 import React, { useEffect } from "react";
-
-// router dom
 import { useParams, Link } from "react-router-dom";
-
-// react redux
 import { useDispatch, useSelector } from "react-redux";
-
-// actions
 import pokemonAction from "../redux/actions/pokemonActions";
 import { pokemonFavorite } from "../redux/actions/pokemonActions";
-
-// sweet alert
 import Swal from "sweetalert2";
 
 const PokemonDetail = () => {
@@ -18,7 +10,7 @@ const PokemonDetail = () => {
 
   // show detail data pokemon
   const listPokemonDetail = useSelector((state) => state.pokemon.detail);
-  console.log("ini list Pokemon Detail", listPokemonDetail);
+  // console.log("ini list Pokemon Detail", listPokemonDetail);
   const { name } = useParams();
   useEffect(() => {
     dispatch(pokemonAction.fetchPokemonDetail(name));
@@ -119,8 +111,8 @@ const PokemonDetail = () => {
                   })}
               </div>
               {/* <div className="row">
-                <div class="card">
-                  <div class="card-body">
+                <div className="card">
+                  <div className="card-body">
                     This is some text within a card body.
                   </div>
                 </div>
@@ -128,7 +120,7 @@ const PokemonDetail = () => {
               <button
                 onClick={() => handleClick(listPokemonDetail)}
                 type="button"
-                class="btn btn-primary"
+                className="btn btn-primary"
               >
                 Add Favorite
               </button>

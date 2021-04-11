@@ -1,27 +1,11 @@
-import React, {useState} from 'react'
-import { withRouter } from "react-router-dom"; 
-import { Redirect } from 'react-router-dom';
-import FormLogin from '../components/formLogin';
-
+import React from "react";
 
 const Login = () => {
-    const [isSubmitted, setIsSubmitted] = useState(false);
-  
-    function submitForm() {
-      setIsSubmitted(true);
-    }
-    return (
-      <>
-      <div className="container">
-       <h1>Login</h1>
-          {!isSubmitted ? (
-            <FormLogin submitForm={submitForm} />
-          ) : (
-            <Redirect to="/" />
-          )}
-      </div>
-      </>
-    );
-  };
+  return (
+    <div>
+      <h1>Login</h1>
+    </div>
+  );
+};
 
-export default withRouter(Login);
+export default Login;
