@@ -13,7 +13,7 @@ const PokemonFavorite = () => {
           <h3>Belum ada yang difavoritkan</h3>
         ) : (
           listFavorite.map((item, index) => (
-            <div className="card" style={{ width: "18rem" }}>
+            <div key={index} className="card" style={{ width: "18rem" }}>
               <img
                 className="card-img-top"
                 src={item.sprites.other.dream_world.front_default}
@@ -26,10 +26,10 @@ const PokemonFavorite = () => {
                   Weight : {item.weight} <br />
                   base sexperience: {item.base_experience}
                 </p>
-                <a className="btn btn-primary">Add To Battle</a>
+                <button className="btn btn-primary">Add To Battle</button>
                 <br />
                 <br />
-                <a className="btn btn-primary">Delete Favorite</a>
+                <button className="btn btn-primary">Delete Favorite</button>
               </div>
             </div>
           ))
