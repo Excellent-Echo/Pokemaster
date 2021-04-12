@@ -30,7 +30,7 @@ const PokemonDetail = () => {
     } else {
       dispatch(pokemonFavorite(event));
       Swal.fire({
-        position: "top-end",
+        position: "top-center",
         icon: "success",
         title: "Add Favourite Success",
         showConfirmButton: false,

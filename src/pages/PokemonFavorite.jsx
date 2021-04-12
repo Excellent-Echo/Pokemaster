@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 
 const PokemonFavorite = () => {
   const listFavorite = useSelector((state) => state.pokemon.favorite);
+  
   console.log("Ini favorite", listFavorite);
 
   return (
@@ -29,7 +30,7 @@ const PokemonFavorite = () => {
                 <button className="btn btn-primary">Add To Battle</button>
                 <br />
                 <br />
-                <button className="btn btn-primary">Delete Favorite</button>
+                <button className="btn btn-danger">Delete Favorite</button>
               </div>
             </div>
           ))
