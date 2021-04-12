@@ -1,9 +1,9 @@
-import loginReducer from "./loginReducers";
+import userReducers from "./userReducers";
 import pokemonReducer from "./pokemonReducers";
 
 const rootReducers = {
   pokemon: pokemonReducer,
-  userLogin : loginReducer
+  user: userReducers,
 };
 
 export default rootReducers;
