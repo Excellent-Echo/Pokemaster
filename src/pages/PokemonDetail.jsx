@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import pokemonAction from "../redux/actions/pokemonActions";
 import { pokemonFavorite } from "../redux/actions/pokemonActions";
 import Swal from "sweetalert2";
+import styled from "styled-components";
 
 const PokemonDetail = () => {
   const dispatch = useDispatch();
@@ -30,7 +31,7 @@ const PokemonDetail = () => {
     } else {
       dispatch(pokemonFavorite(event));
       Swal.fire({
-        position: "top-end",
+        position: "top-center",
         icon: "success",
         title: "Add Favourite Success",
         showConfirmButton: false,
@@ -39,18 +40,54 @@ const PokemonDetail = () => {
     }
   }
 
+  const FavButton = styled.button`
+    cursor: pointer;
+    background: #c1292e;
+    font-size: 17px;
+    border-radius: 5px;
+    border: 3px solid #c1292e;
+    padding: 0.25em 0.5em;
+    transition: 0.2s all ease-out;
+    color: #f4f4f6;
+    font-weight: bold;
+    text-transform: capitalize;
+    width: 100%;
+
+    &:hover {
+      background-color: #f4f4f6;
+      color: #c1292e;
+    }
+  `;
+
   return (
     <>
-      <div className="container-fluid ttl-container" id="grass-type">
+      <div className="container-fluid ttl-container" id="dark-type">
         <div className="container">
+          <br/>
+          { console.log(listPokemonDetail) }
           <div className="row">
             <div className="col-md">
-              <div className="img-container">
-                <img
-                  src={`https://img.pokemondb.net/artwork/large/${listPokemonDetail.name}.jpg`}
-                  alt=""
-                  className="poke-img-dtl"
-                />
+              <div className="container-fluid container-md">
+                <div className="row">
+                  <div className="col-md">
+                      <Link to="/">
+                      <FavButton className="btn-fav">Back</FavButton>
+                    </Link> 
+                  </div>
+                  <div className="col-md">
+                    <FavButton onClick={() => handleClick(listPokemonDetail)}>
+                        Favourite { listPokemonDetail.name }
+                    </FavButton>
+                  </div>
+                </div>
+                <br/>
+                <div className="dtl-img-container">
+                  <img
+                    src={`https://img.pokemondb.net/artwork/large/${listPokemonDetail.name}.jpg`}
+                    alt=""
+                    className="img-fluid img-thumbnail poke-img-dtl"
+                  />
+                </div>
               </div>
             </div>
             <div className="col-md dt-ttl-container">
@@ -58,75 +95,72 @@ const PokemonDetail = () => {
               <h2 className="display-3 dt-poke-name">
                 {listPokemonDetail.name}
               </h2>
-
               <div className="row">
                 <div className="col-md">
-                  <h4>Description :</h4>
+                  <h4 className="card-title">Type :</h4>
+                  <h5>
+                  { listPokemonDetail.types &&
+                    listPokemonDetail.types.map((item, index) => {
+                      return (
+                        <span key={ index } className="badge dtl-poke" id={ `${ item.type.name }-type` }>
+                          {item.type.name}
+                        </span>
+                      );
+                    })}
+                  </h5>
+                </div>
+                <div className="col-md">
+                <h4 className="card-title">Description :</h4>
                   <h5>
                     <span className="badge dtl-poke" id="flying-type">
                       Height : {listPokemonDetail.height}
                     </span>
-                    <span className="badge dtl-poke" id="fire-type">
+                    <span className="badge dtl-poke" id="flying-type">
                       Weight : {listPokemonDetail.weight}
                     </span>
-                    <span className="badge dtl-poke" id="fire-type">
-                      base sexperience: {listPokemonDetail.base_experience}
+                    <span className="badge dtl-poke" id="flying-type">
+                      Base Experience: {listPokemonDetail.base_experience}
                     </span>
                   </h5>
                 </div>
+              </div>
+              <div className="row">
                 <div className="col-md">
-                  <h4>Abilities :</h4>
-                  {listPokemonDetail.abilities &&
+                  <h4 className="card-title">Abilities :</h4>
+                  <h5>
+                  { listPokemonDetail.abilities &&
                     listPokemonDetail.abilities.map((item, index) => {
                       return (
-                        <div key={index}>
-                          <h5>
-                            <span className="badge dtl-poke" id="water-type">
-                              {item.ability.name}
-                            </span>
-                            {/* <span className="badge dtl-poke" id="electric-type">
-                              Electric
-                            </span>
-                            <span className="badge dtl-poke" id="rock-type">
-                              Rock
-                            </span> */}
-                          </h5>
-                        </div>
+                          <span key={index} className="badge dtl-poke" id="water-type">
+                            {item.ability.name}
+                          </span>
                       );
                     })}
-                  <hr />
+                  </h5>
                 </div>
               </div>
-              <div>
-                {listPokemonDetail.stats &&
-                  listPokemonDetail.stats.map((item, index) => {
-                    return (
-                      <div key={index}>
-                        <h2>name : {item.stat.name}</h2>
-                        <p>base stat : {item.base_stat}</p>
-                        <p>effort : {item.effort}</p>
-                        <hr />
-                      </div>
-                    );
-                  })}
-              </div>
-              {/* <div className="row">
-                <div className="card">
+              <div className="row">
+                <div className="card poke-info">
                   <div className="card-body">
-                    This is some text within a card body.
-                  </div>
+                  <h4 className="card-title">Stats :</h4>
+                    <h5 style={{ textTransform: "uppercase" }}>
+                    {listPokemonDetail.stats &&
+                      listPokemonDetail.stats.map((item, index) => {
+                        return (
+                            <>
+                            <span key={index} className="badge dtl-poke" id="water-type">
+                              {item.stat.name} : {item.base_stat}
+                            </span>
+                            </>
+                        );
+                      })}
+                    </h5>
                 </div>
-              </div> */}
-              <button
-                onClick={() => handleClick(listPokemonDetail)}
-                type="button"
-                className="btn btn-primary"
-              >
-                Add Favorite
-              </button>
-              <Link to="/pokemonfavorite">
+                </div>
+              </div>
+              {/* <Link to="/pokemonfavorite">
                 <button>Go to My Pokemon</button>
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>
