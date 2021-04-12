@@ -19,7 +19,6 @@ const Pokemon = () => {
   };
 
   const handleSearch = (e) => {
-    // console.log(e.target.value);
     setSearch(e.target.value);
   };
 
