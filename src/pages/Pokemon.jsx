@@ -71,7 +71,6 @@ const Pokemon = () => {
                 id="frm-search"
                 type="text"
                 placeholder="Example Pineco"
-                aria-label="Name or Number"
                 onChange={handleSearch}
               />
             </div>
@@ -90,10 +89,10 @@ const Pokemon = () => {
                 })
                 .map((item, index) => {
                   return (
-                    <div className="col-sm crd-col" key={index}>
+                    <div className="col-md crd-col" key={index}>
                       <div
                         className="card poke-card"
-                        style={{ width: "18rem", height: "20rem" }}
+                        style={{ width: "18rem", height: "19rem" }}
                         onClick={() => handleClick(item.name)}
                       >
                         <div className="img-container">
@@ -105,7 +104,7 @@ const Pokemon = () => {
                         </div>
                         <div className="card-body">
                           <h4 className="card-title">{item.name}</h4>
-                          <span className="badge crd-span" id="electric-type">
+                          <span className="badge card-text crd-span" id="electric-type">
                             Electric
                           </span>
                         </div>
