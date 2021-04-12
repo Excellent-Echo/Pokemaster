@@ -2,6 +2,7 @@ import {
   FETCH_POKEMON,
   FETCH_POKEMON_DETAIL,
   ADD_POKEMON_FAVORITE,
+  REMOVE_POKEMON_FAVORITE
 } from "../actionsType/pokemonType";
 import axios from "../../APIs/pokemonApi";
 
@@ -37,6 +38,11 @@ const fetchPokemonDetail = (name) => async (dispatch) => {
   }
 };
 
+const handleRemove = (name) => (dispatch) => {
+  dispatch({ type: REMOVE_POKEMON_FAVORITE,
+  name });
+}
+
 export const pokemonFavorite = (favoriteObj) => (dispatch) => {
   try {
     dispatch({
@@ -48,9 +54,11 @@ export const pokemonFavorite = (favoriteObj) => (dispatch) => {
   }
 };
 
+
 const pokemonAction = {
   fetchPokemon,
   fetchPokemonDetail,
+  handleRemove
 };
 
 export default pokemonAction;
