@@ -104,6 +104,7 @@ p.subtitle {
   padding: 7px;
   padding-left: 13px;
   padding-right: 13px;
+  text-transform: uppercase;
 }
 
 .badge.dtl-poke {
@@ -114,117 +115,61 @@ p.subtitle {
   padding-left: 13px;
   padding-right: 13px;
   border: 2px solid #F4F4F6;
-  text-transform: uppercase ;
 }
 
-.badge#electric-type {
+#electric-type {
   background-color: #FFCB77;
   color: #212227 !important; 
 }
 
-.badge#fire-type, .badge#fighting-type {
+#fire-type, #fighting-type {
   background-color: #C1292E;
   color: #F4F4F6 !important; 
 }
 
-.badge#water-type {
+#water-type {
   background-color: #227C9D;
   color: #F4F4F6 !important; 
 }
 
-.badge#dark-type {
+#dark-type {
   background-color: #212227;
   color: #F4F4F6 !important; 
 }
 
-.badge#fairy-type, .badge#psychic-type {
+#fairy-type, #psychic-type {
   background-color: #FF6392;
   color: #212227 !important; 
 }
 
-.badge#ground-type, .badge#rock-type {
+#ground-type, #rock-type {
   background-color: #553D36;
   color: #F4F4F6 !important; 
 }
 
-.badge#grass-type, .badge#bug-type {
+#grass-type, #bug-type {
   background-color: #5C8001;
-  color: #212227 !important; 
+  color: #F4F4F6 !important; 
 }
 
-.badge#ice-type, .badge#flying-type {
+#ice-type, #flying-type {
   background-color: #90E0EF;
   color: #212227 !important; 
 }
 
-.badge#poison-type, .badge#ghost-type {
+#poison-type, #ghost-type {
   background-color: #81559B;
   color: #F4F4F6 !important; 
 }
 
-.badge#dragon-type {
+#dragon-type {
   background-color: #704E2E;
   color: #F4F4F6 !important; 
 }
 
-.badge#steel-type, .badge#normal-type {
+#steel-type, #normal-type {
   background-color: #AEA3B0;
-  color: #212227 !important; 
-}
-
-.ttl-container#electric-type {
-  background-color: #FFCB77;
-  color: #212227 !important; 
-}
-
-.ttl-container#fire-type, .ttl-container#fighting-type {
-  background-color: #C1292E;
   color: #F4F4F6 !important; 
-}
-
-.ttl-container#water-type {
-  background-color: #227C9D;
-  color: #F4F4F6 !important; 
-}
-
-.ttl-container#dark-type {
-  background-color: #212227;
-  color: #F4F4F6 !important; 
-}
-
-.ttl-container#fairy-type, .ttl-container#psychic-type {
-  background-color: #FF6392;
-  color: #212227 !important; 
-}
-
-.ttl-container#ground-type, .ttl-container#rock-type {
-  background-color: #553D36;
-  color: #F4F4F6 !important; 
-}
-
-.ttl-container#grass-type, .ttl-container#bug-type {
-  background-color: #5C8001;
-  color: #212227 !important; 
-}
-
-.ttl-container#ice-type, .ttl-container#flying-type {
-  background-color: #90E0EF;
-  color: #212227 !important; 
-}
-
-.ttl-container#poison-type, .ttl-container#ghost-type {
-  background-color: #81559B;
-  color: #F4F4F6 !important; 
-}
-
-.ttl-container#dragon-type {
-  background-color: #704E2E;
-  color: #F4F4F6 !important; 
-}
-
-.ttl-container#steel-type, .ttl-container#normal-type {
-  background-color: #AEA3B0;
-  color: #212227 !important; 
 }
 
 .dt-ttl-container {
@@ -256,6 +201,60 @@ p.subtitle {
 .poke-info {
   color: #212227 !important;
   /* text-align: start !important; */
+  max-width: 500px;
+}
+
+.regis-card {
+  padding: 1rem;
+  display: flex;
+  color: #212227;
+}
+
+.form-floating {
+  margin-top: 20px;
+}
+
+.btn-form-container {
+  margin-top: 25px;
+}
+
+.regis-card {
+  /* background-color: #FFCB77; */
+}
+
+.img-regis-container {
+  display: flex;
+  justify-content: center;
+  /* background-color: #FFCB77; */
+  padding: 0;
+  margin: 0;
+}
+
+.img-regis-container > img {
+  width: 100%;
+  height: 100%;
+}
+
+.regis-link {
+  text-decoration: none;
+  color: #F4F4F6;
+  transition: all .2s ease-in-out;
+}
+
+.regis-footer {
+  padding-left: 1rem;
+  padding-top: 0;
+  /* position: absolute; */
+  bottom: 1rem;
+}
+
+.btn-remove-container {
+  /* display: flex; */
+  padding: 1rem;
+  /* float: right !important; */
+  right: .1vw;
+  position: absolute;
+  /* display: none; */
 }
 
 .ftr-container {
@@ -313,6 +312,10 @@ p.subtitle {
     justify-content: center;
   }
 
+  .card-body h6 {
+    text-align: center;
+  }
+
   .card-title {
     text-align: center;
   }
@@ -334,5 +337,9 @@ p.subtitle {
     padding: 1rem;
     max-width: 100%;
     margin-bottom: 15px;
+  }
+
+  .img-regis-container {
+    display: none;
   }
 }
