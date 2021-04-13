@@ -10,36 +10,78 @@ const PokemonFavorite = () => {
   console.log("Ini favorite", listFavorite);
 
   return (
-    <div style={{ margin: "100px" }}>
-      <h3>My Favorite Pokemon</h3>
-      <div>
-        {listFavorite === 0 ? (
-          <h3>Belum ada yang difavoritkan</h3>
-        ) : (
-          listFavorite.map((item, index) => (
-            <div key={index} className="card" style={{ width: "18rem" }}>
-              <img
-                className="card-img-top"
-                src={item.sprites.other.dream_world.front_default}
-                alt="pokemon"
-              />
-              <div className="card-body">
-                <h5 className="card-title">{item.name}</h5>
-                <p className="card-text">
-                  Height : {item.height} <br />
-                  Weight : {item.weight} <br />
-                  base sexperience: {item.base_experience}
-                </p>
-                <button className="btn btn-primary">Add To Battle</button>
-                <br />
-                <br />
-                <button className="btn btn-danger" onClick={() => handleRemove(removeFavorite)}>Delete Favorite</button>
-              </div>
+    <>
+    <div className="container-fluid ttl-container" id="ghost-type">
+      <div className="container">
+          <div className="row">
+            <div className="col-md-6">
+              <h1 className="display-1 title">My Pokémon</h1>
+              <p className="subtitle">
+                You will find your Pokémon Collections here.
+              </p>
             </div>
-          ))
-        )}
+          </div>
+        </div>
+    </div>
+    <div className="container-fluid crd-container">
+      <div className="container">
+        <div className="row">
+          {listFavorite === 0 ? (
+            <h3>Empty ! Go catch some Pokémons!</h3>
+          ) : (
+            listFavorite.map((item, index) => (
+              <div className="col-md crd-col">
+                <div className="card poke-card fav-card" key={{ index }} style={{ width: "18rem" }}>
+                  <div className="btn-remove-container">
+                    <button className="btn btn-danger btn-sm btn-remove" onClick={() => handleRemove(removeFavorite)}>
+                      Remove
+                    </button>
+                  </div>
+                  Mas aziz itu aku liat tadi ada pokemon yg gaada gambarnya di page ini.
+                  Aku udh sediain gambar placeholder nya di folder asset ya, aku udh coba
+                  di img src bawah sih, tp aku gatau jalan apa ngga. Td lupa pokemon yg mana
+                  yg gaada gambarnya.
+                  <div className="img-container">
+                    <img
+                      className="card-img-top poke-img"
+                      src={ `${ item.sprites.other.dream_world.front_default ? item.sprites.other.dream_world.front_default : "../assets/pokelogo.png" }` }
+                      alt="pokemon"
+                    />
+                  </div>
+                  <div className="card-body">
+                    <h5 className="card-title">{item.name}</h5>
+                    {/* <p className="card-text"> */}
+                    <h6>
+                    { item.types &&
+                      item.types.map((item, index) => {
+                        return (
+                          <span key={ index } className="badge crd-span" id={ `${ item.type.name }-type` }>
+                            {item.type.name}
+                          </span>
+                        );
+                      })}
+                    </h6>
+                    <h6>
+                      <span className="badge crd-span" id="normal-type">
+                        HEIGHT : { item.height }
+                      </span>
+                      <span className="badge crd-span" id="normal-type">
+                        WEIGHT : { item.weight }
+                      </span>
+                    </h6>
+                    {/* </p> */}
+                    <button className="btn btn-primary">Add To Battle</button>
+                    <br />
+                    <br />
+                  </div>
+                </div>
+              </div>
+            ))
+          )}
+        </div>
       </div>
     </div>
+    </>
   );
 };
 

@@ -40,6 +40,11 @@ const PokemonDetail = () => {
     }
   }
 
+  let PokeWeight = (weight) => {
+    parseFloat(weight).toFixed(2)
+    return weight
+  }
+
   const FavButton = styled.button`
     cursor: pointer;
     background: #c1292e;
@@ -95,9 +100,10 @@ const PokemonDetail = () => {
               <h2 className="display-3 dt-poke-name">
                 {listPokemonDetail.name}
               </h2>
+              <br/><br/>
               <div className="row">
                 <div className="col-md">
-                  <h4 className="card-title">Type :</h4>
+                  <h4 className="card-title">Type</h4>
                   <h5>
                   { listPokemonDetail.types &&
                     listPokemonDetail.types.map((item, index) => {
@@ -110,13 +116,13 @@ const PokemonDetail = () => {
                   </h5>
                 </div>
                 <div className="col-md">
-                <h4 className="card-title">Description :</h4>
+                <h4 className="card-title">Description</h4>
                   <h5>
                     <span className="badge dtl-poke" id="flying-type">
                       Height : {listPokemonDetail.height}
                     </span>
                     <span className="badge dtl-poke" id="flying-type">
-                      Weight : {listPokemonDetail.weight}
+                      Weight : { PokeWeight(listPokemonDetail.weight) }
                     </span>
                     <span className="badge dtl-poke" id="flying-type">
                       Base Experience: {listPokemonDetail.base_experience}
@@ -126,7 +132,7 @@ const PokemonDetail = () => {
               </div>
               <div className="row">
                 <div className="col-md">
-                  <h4 className="card-title">Abilities :</h4>
+                  <h4 className="card-title">Abilities</h4>
                   <h5>
                   { listPokemonDetail.abilities &&
                     listPokemonDetail.abilities.map((item, index) => {
@@ -142,7 +148,7 @@ const PokemonDetail = () => {
               <div className="row">
                 <div className="card poke-info">
                   <div className="card-body">
-                  <h4 className="card-title">Stats :</h4>
+                  <h4 className="card-title">Stats</h4>
                     <h5 style={{ textTransform: "uppercase" }}>
                     {listPokemonDetail.stats &&
                       listPokemonDetail.stats.map((item, index) => {
