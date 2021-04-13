@@ -201,6 +201,7 @@ p.subtitle {
 .poke-info {
   color: #212227 !important;
   /* text-align: start !important; */
+  max-width: 500px;
 }
 
 .regis-card {
