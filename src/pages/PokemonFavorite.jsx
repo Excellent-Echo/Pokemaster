@@ -37,10 +37,6 @@ const PokemonFavorite = () => {
                       Remove
                     </button>
                   </div>
-                  Mas aziz itu aku liat tadi ada pokemon yg gaada gambarnya di page ini.
-                  Aku udh sediain gambar placeholder nya di folder asset ya, aku udh coba
-                  di img src bawah sih, tp aku gatau jalan apa ngga. Td lupa pokemon yg mana
-                  yg gaada gambarnya.
                   <div className="img-container">
                     <img
                       className="card-img-top poke-img"
