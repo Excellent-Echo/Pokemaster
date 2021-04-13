@@ -1,9 +1,12 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import pokemonAction from "../redux/actions/pokemonActions";
 
 const PokemonFavorite = () => {
+
+  const handleRemove = pokemonAction.handleRemove;
   const listFavorite = useSelector((state) => state.pokemon.favorite);
-  
+  const removeFavorite = useSelector((state) => state.pokemon.remove);
   console.log("Ini favorite", listFavorite);
 
   return (
@@ -30,7 +33,7 @@ const PokemonFavorite = () => {
                 <button className="btn btn-primary">Add To Battle</button>
                 <br />
                 <br />
-                <button className="btn btn-danger">Delete Favorite</button>
+                <button className="btn btn-danger" onClick={() => handleRemove(removeFavorite)}>Delete Favorite</button>
               </div>
             </div>
           ))
