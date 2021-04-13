@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { setRegisterActions } from "../redux/actions/userAction";
 
 import { Link } from "react-router-dom";
@@ -14,8 +14,8 @@ const Register = () => {
   });
 
   const dispatch = useDispatch();
-  const selector = useSelector((state) => state.user);
-  console.log(selector);
+  // const selector = useSelector((state) => state.user);
+  // console.log(selector);
 
   const handleChange = (e) => {
     setRegister({
@@ -26,10 +26,10 @@ const Register = () => {
 
   const FormButton = styled.button`
     cursor: pointer;
-    background: #FFCB77;
+    background: #ffcb77;
     font-size: 14px;
     border-radius: 5px;
-    border: 3px solid #FFCB77;
+    border: 3px solid #ffcb77;
     padding: 0.25em 0.5em;
     transition: 0.2s all ease-out;
     color: #212227;
@@ -37,60 +37,25 @@ const Register = () => {
     width: 100%;
 
     &:hover {
-      background-color: #F4F4F6;
+      background-color: #f4f4f6;
       color: #212227;
     }
   `;
 
   return (
-    // <div style={{ margin: "100px" }}>
-    //   <h1>Register</h1>
-    //   <form
-    //     onSubmit={(event) => {
-    //       event.preventDefault();
-    //       dispatch(setRegisterActions(register, event));
-    //     }}
-    //   >
-    //     <input
-    //       placeholder="input your name"
-    //       type="text"
-    //       name="fullname"
-    //       value={register.fullname}
-    //       onChange={(e) => handleChange(e)}
-    //       required
-    //     />
-    //     <br />
-    //     <input
-    //       placeholder="input your email"
-    //       type="email"
-    //       name="email"
-    //       value={register.email}
-    //       onChange={(e) => handleChange(e)}
-    //       required
-    //     />
-    //     <br />
-    //     <input
-    //       placeholder="input your password"
-    //       type="password"
-    //       name="password"
-    //       value={register.password}
-    //       onChange={(e) => handleChange(e)}
-    //       required
-    //     />
-    //     <br />
-    //     <button type="submit">Register</button>
-    //   </form>
-    // </div>
-
     <>
-      <div className="container-fluid ttl-container regis-container" id="normal-type">
+      <div
+        className="container-fluid ttl-container regis-container"
+        id="normal-type"
+      >
         <div className="container">
           <div className="row justify-content-center  ">
             <div className="col-md">
-              <h2 className="display-5 title">
-                Wanna be a Pokémon Master ?
-              </h2>
-              <p className="subtitle" style={{ color: "rgba(33, 34, 39, 0.1) !important" }}>
+              <h2 className="display-5 title">Wanna be a Pokémon Master ?</h2>
+              <p
+                className="subtitle"
+                style={{ color: "rgba(33, 34, 39, 0.1) !important" }}
+              >
                 Looks like you're new. Let's Create Your Pokémon Master Account!
               </p>
             </div>
@@ -103,21 +68,50 @@ const Register = () => {
                     <div className="card-body">
                       <h5>
                         <span className="badge regis-alert" id="electric-type">
-                        All Fields Are Required
+                          All Fields Are Required
                         </span>
                       </h5>
-                      <form onSubmit={(event) => { event.preventDefault(); dispatch(setRegisterActions(register, event)); }}>
+                      <form
+                        onSubmit={(event) => {
+                          event.preventDefault();
+                          dispatch(setRegisterActions(register, event));
+                        }}
+                      >
                         <div className="form-floating">
-                          <input type="text" class="form-control" id="name" placeholder="Ex: Ash Ketchum" value={register.fullname} onChange={(e) => handleChange(e)} required/>
-                          <label for="name">Your Name</label>
+                          <input
+                            type="text"
+                            className="form-control"
+                            id="name"
+                            placeholder="Ex: Ash Ketchum"
+                            value={register.fullname}
+                            onChange={(e) => handleChange(e)}
+                            required
+                          />
+                          <label>Your Name</label>
                         </div>
                         <div className="form-floating">
-                          <input type="email" class="form-control" id="email" placeholder="ash@poke.info"  value={register.email} onChange={(e) => handleChange(e)} required/>
-                          <label for="name">Email</label>
+                          <input
+                            type="email"
+                            className="form-control"
+                            id="email"
+                            placeholder="ash@poke.info"
+                            value={register.email}
+                            onChange={(e) => handleChange(e)}
+                            required
+                          />
+                          <label>Email</label>
                         </div>
                         <div className="form-floating">
-                          <input type="password" class="form-control" id="password" placeholder="Password"  value={register.password} onChange={(e) => handleChange(e)} required/>
-                          <label for="password">Password</label>
+                          <input
+                            type="password"
+                            className="form-control"
+                            id="password"
+                            placeholder="Password"
+                            value={register.password}
+                            onChange={(e) => handleChange(e)}
+                            required
+                          />
+                          <label>Password</label>
                         </div>
                         <div className="btn-form-container">
                           <FormButton type="submit">Register</FormButton>
@@ -125,17 +119,15 @@ const Register = () => {
                       </form>
                     </div>
                     <div className="regis-footer">
-                      <hr/>
+                      <hr />
                       <div className="row">
                         <div className="col-md">
-                          <h5>
-                            Already a Pokémon Master ?
-                          </h5>
+                          <h5>Already a Pokémon Master ?</h5>
                           <h5>
                             <span className="badge regis-alert" id="fairy-type">
                               <Link className="regis-link" to="/login">
                                 Sign In Here
-                              </Link> 
+                              </Link>
                             </span>
                           </h5>
                         </div>
@@ -143,7 +135,11 @@ const Register = () => {
                     </div>
                   </div>
                   <div className="col-md-3 img-regis-container">
-                    <img src="https://assets.pokemon.com/static2/_ui/img/account/pokemon-signup.png" className="img-fluid" alt=""/>
+                    <img
+                      src="https://assets.pokemon.com/static2/_ui/img/account/pokemon-signup.png"
+                      className="img-fluid"
+                      alt=""
+                    />
                   </div>
                 </div>
               </div>

@@ -2,15 +2,15 @@ import { USER_REGISTER, USER_LOGIN } from "../actionsType/userType";
 import axios from "../../APIs/userApi";
 
 export const setRegisterActions = (values, event) => async (dispatch) => {
-  console.log("ini values", values);
-  console.log("ini event", event);
+  // console.log("ini values", values);
+  // console.log("ini event", event);
 
   try {
     const register = await axios({
       method: "post",
       url: "/users",
     });
-    console.log("ini register", register);
+    // console.log("ini register", register);
     dispatch({
       type: USER_REGISTER,
       payload: register.data,
