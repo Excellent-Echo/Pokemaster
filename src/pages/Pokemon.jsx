@@ -82,12 +82,9 @@ const Pokemon = () => {
                         </div>
                         <div className="card-body">
                           <h4 className="card-title">{item.name}</h4>
-                          <span
-                            className="badge card-text crd-span"
-                            id="electric-type"
-                          >
+                          {/* <span className="badge card-text crd-span" id="electric-type">
                             Electric
-                          </span>
+                          </span> */}
                         </div>
                       </div>
                     </div>
