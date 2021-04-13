@@ -2,12 +2,14 @@ import {
   FETCH_POKEMON,
   FETCH_POKEMON_DETAIL,
   ADD_POKEMON_FAVORITE,
+  REMOVE_POKEMON_FAVORITE
 } from "../actionsType/pokemonType";
 
 const initialState = {
   dataApi: [],
   detail: [],
   favorite: [],
+  remove: []
 };
 
 const pokemonReducer = (state = initialState, action) => {
@@ -26,6 +28,11 @@ const pokemonReducer = (state = initialState, action) => {
       return {
         ...state,
         favorite: [...state.favorite, action.payload],
+      };
+    case REMOVE_POKEMON_FAVORITE:
+      return {
+        ...state,
+        remove: state.list.filter((item) => item.name !== action.name),
       };
     default:
       return state;
