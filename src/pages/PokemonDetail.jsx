@@ -5,10 +5,12 @@ import pokemonAction from "../redux/actions/pokemonActions";
 import { pokemonFavorite } from "../redux/actions/pokemonActions";
 import Swal from "sweetalert2";
 import styled from "styled-components";
+import { ResponsiveContainer, Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Legend } from "recharts";
 
 const PokemonDetail = () => {
   const dispatch = useDispatch();
 
+  // show detail data pokemon
   const listPokemonDetail = useSelector((state) => state.pokemon.detail);
   // console.log("ini list Pokemon Detail", listPokemonDetail);
   const { name } = useParams();
@@ -17,6 +19,7 @@ const PokemonDetail = () => {
     // eslint-disable-next-line
   }, [dispatch]);
 
+  // fungsi klik untuk favorite pokomon
   function handleClick(event) {
     console.log(event);
     if (listPokemonDetail === "") {
@@ -61,24 +64,24 @@ const PokemonDetail = () => {
     <>
       <div className="container-fluid ttl-container" id="dark-type">
         <div className="container">
-          <br />
-          {console.log(listPokemonDetail)}
+          <br/>
+          { console.log(listPokemonDetail) }
           <div className="row">
             <div className="col-md">
               <div className="container-fluid container-md">
                 <div className="row">
                   <div className="col-md">
-                    <Link to="/">
+                      <Link to="/">
                       <FavButton className="btn-fav">Back</FavButton>
-                    </Link>
+                    </Link> 
                   </div>
                   <div className="col-md">
                     <FavButton onClick={() => handleClick(listPokemonDetail)}>
-                      Favourite {listPokemonDetail.name}
+                        Favourite { listPokemonDetail.name }
                     </FavButton>
                   </div>
                 </div>
-                <br />
+                <br/>
                 <div className="dtl-img-container">
                   <img
                     src={`https://img.pokemondb.net/artwork/large/${listPokemonDetail.name}.jpg`}
@@ -97,22 +100,18 @@ const PokemonDetail = () => {
                 <div className="col-md">
                   <h4 className="card-title">Type :</h4>
                   <h5>
-                    {listPokemonDetail.types &&
-                      listPokemonDetail.types.map((item, index) => {
-                        return (
-                          <span
-                            key={index}
-                            className="badge dtl-poke"
-                            id={`${item.type.name}-type`}
-                          >
-                            {item.type.name}
-                          </span>
-                        );
-                      })}
+                  { listPokemonDetail.types &&
+                    listPokemonDetail.types.map((item, index) => {
+                      return (
+                        <span key={ index } className="badge dtl-poke" id={ `${ item.type.name }-type` }>
+                          {item.type.name}
+                        </span>
+                      );
+                    })}
                   </h5>
                 </div>
                 <div className="col-md">
-                  <h4 className="card-title">Description :</h4>
+                <h4 className="card-title">Description :</h4>
                   <h5>
                     <span className="badge dtl-poke" id="flying-type">
                       Height : {listPokemonDetail.height}
@@ -130,44 +129,63 @@ const PokemonDetail = () => {
                 <div className="col-md">
                   <h4 className="card-title">Abilities :</h4>
                   <h5>
-                    {listPokemonDetail.abilities &&
-                      listPokemonDetail.abilities.map((item, index) => {
-                        return (
-                          <span
-                            key={index}
-                            className="badge dtl-poke"
-                            id="water-type"
-                          >
+                  { listPokemonDetail.abilities &&
+                    listPokemonDetail.abilities.map((item, index) => {
+                      return (
+                          <span key={index} className="badge dtl-poke" id="water-type">
                             {item.ability.name}
                           </span>
-                        );
-                      })}
+                      );
+                    })}
                   </h5>
                 </div>
               </div>
-              <div className="row">
+            <div className="row">
+              <div class="col align-self-end">
+
+                </div>
                 <div className="card poke-info">
                   <div className="card-body">
-                    <h4 className="card-title">Stats :</h4>
-                    <h5 style={{ textTransform: "uppercase" }}>
-                      {listPokemonDetail.stats &&
-                        listPokemonDetail.stats.map((item, index) => {
-                          return (
-                            <>
-                              <span
-                                key={index}
-                                className="badge dtl-poke"
-                                id="water-type"
-                              >
-                                {item.stat.name} : {item.base_stat}
-                              </span>
-                            </>
+                  <h4 className="card-title">Statistics</h4>
+                    {/* <h5 style={{ textTransform: "uppercase" }}> */}
+                    {/* {listPokemonDetail.stats &&
+                      listPokemonDetail.stats.map((item, index) => {
+                        return (
+                          <>
+                          <span key={index} className="badge dtl-poke" id="water-type">
+                          {item.stat.name} : {item.base_stat}
+                          </span>
+                          <ResponsiveContainer>
+                          <RadarChart outerRadius={90} width={300} height={100} data={item.base_stat}>
+                          <PolarGrid />
+                          <PolarAngleAxis dataKey={item.stat.name}/>
+                          <PolarRadiusAxis angle={30} domain={[0, 150]} />
+                          <Radar name = {listPokemonDetail.name} dataKey={item.stat.name} stroke="#8884d8" fill="#8884d8" fillOpacity={0.6}/>
+                          <Legend />
+                          </RadarChart>
+                          </ResponsiveContainer>
+                          </>
                           );
-                        })}
-                    </h5>
+                        })} */}
+                    {/* </h5> */}
+                    {
+                      console.log(listPokemonDetail.stats)
+                    }
+                    <ResponsiveContainer width={450} minWeidth={100} minHeight="90%" height="90%">
+                      <RadarChart outerRadius={90} width={300} height={100} data={listPokemonDetail.stats}>
+                        <PolarGrid />
+                            <PolarAngleAxis dataKey="stat.name" />
+                            <PolarRadiusAxis angle={30} domain={[0, 150]} />
+                            <Radar name={listPokemonDetail.name} dataKey="base_stat" stroke="#8884d8" fill="#8884d8" fillOpacity={0.8}/>
+                            <Legend />
+                      </RadarChart>
+                    </ResponsiveContainer>
                   </div>
                 </div>
               </div>
+              {/* <Link to="/pokemonfavorite">
+                <button>Go to My Pokemon</button>
+              </Link> */}
             </div>
           </div>
         </div>
