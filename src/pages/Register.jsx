@@ -1,26 +1,23 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { setRegisterActions } from "../redux/actions/userAction";
-
-import { Link } from "react-router-dom";
-
+import { Link, useHistory } from "react-router-dom";
 import styled from "styled-components";
 
 const Register = () => {
+  const dispatch = useDispatch();
+  const history = useHistory();
+
   const [register, setRegister] = useState({
     fullname: "",
     email: "",
     password: "",
   });
 
-  const dispatch = useDispatch();
-  // const selector = useSelector((state) => state.user);
-  // console.log(selector);
-
   const handleChange = (e) => {
     setRegister({
       ...register,
-      [e.target.name]: [e.target.value],
+      [e.target.name]: e.target.value,
     });
   };
 
@@ -74,7 +71,9 @@ const Register = () => {
                       <form
                         onSubmit={(event) => {
                           event.preventDefault();
-                          dispatch(setRegisterActions(register, event));
+                          dispatch(
+                            setRegisterActions(register, event, history)
+                          );
                         }}
                       >
                         <div className="form-floating">
@@ -83,6 +82,7 @@ const Register = () => {
                             className="form-control"
                             id="name"
                             placeholder="Ex: Ash Ketchum"
+                            name="fullname"
                             value={register.fullname}
                             onChange={(e) => handleChange(e)}
                             required
@@ -95,6 +95,7 @@ const Register = () => {
                             className="form-control"
                             id="email"
                             placeholder="ash@poke.info"
+                            name="email"
                             value={register.email}
                             onChange={(e) => handleChange(e)}
                             required
@@ -105,8 +106,8 @@ const Register = () => {
                           <input
                             type="password"
                             className="form-control"
-                            id="password"
                             placeholder="Password"
+                            name="password"
                             value={register.password}
                             onChange={(e) => handleChange(e)}
                             required

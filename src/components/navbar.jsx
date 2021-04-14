@@ -1,8 +1,27 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import styled from "styled-components";
+import { useDispatch } from "react-redux";
+import { userLogoutActions } from "../redux/actions/userAction";
+import Swal from "sweetalert2";
 
-function navbar() {
+function Navbar() {
+  const dispatch = useDispatch();
+  const history = useHistory();
+
+  const logoutSuccess = () => {
+    dispatch(userLogoutActions(history));
+    localStorage.removeItem("accessToken");
+    Swal.fire({
+      position: "top-end",
+      icon: "success",
+      title: "Success Logout",
+      showConfirmButton: false,
+      timer: 1500,
+    });
+    window.location.reload();
+  };
+
   const LoginButton = styled.button`
     cursor: pointer;
     background: #c1292e;
@@ -57,26 +76,40 @@ function navbar() {
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav ms-auto">
-              <li className="nav-item">
-                <Link className="nav-link" to="/pokemonfavorite">
-                  My Pokémon
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/profile">
-                  Profile
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/register">
-                  <RegisButton>Register</RegisButton>
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/login">
-                  <LoginButton>Login</LoginButton>
-                </Link>
-              </li>
+              {!localStorage.getItem("accessToken") ? (
+                <>
+                  <li className="nav-item">
+                    <Link className="nav-link" to="/register">
+                      <RegisButton>Register</RegisButton>
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link className="nav-link" to="/login">
+                      <LoginButton>Login</LoginButton>
+                    </Link>
+                  </li>
+                </>
+              ) : (
+                <>
+                  <li className="nav-item">
+                    <Link className="nav-link" to="/pokemonfavorite">
+                      My Pokémon
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link className="nav-link" to="/profile">
+                      Profile
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link className="nav-link">
+                      <LoginButton onClick={() => logoutSuccess()}>
+                        Logout
+                      </LoginButton>
+                    </Link>
+                  </li>
+                </>
+              )}
             </ul>
           </div>
         </div>
@@ -85,4 +118,4 @@ function navbar() {
   );
 }
 
-export default navbar;
+export default Navbar;
