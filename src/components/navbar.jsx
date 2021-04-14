@@ -91,7 +91,27 @@ function Navbar() {
                 </>
               ) : (
                 <>
-                  <li className="nav-item">
+                  {/* dropdown */}
+                  <div className="kebawah">
+                    <button className="kebawah-tombol">Menus</button>
+                    <div className="kebawah-content">
+                      {/* <Link to="/profile">
+                        <p className="teks-kebawah">Profile</p>
+                      </Link> */}
+                      <Link to="/pokemonfavorite">
+                        <p className="teks-kebawah">My Pokemon</p>
+                      </Link>
+                      <div
+                        onClick={() => logoutSuccess()}
+                        style={{ cursor: "pointer" }}
+                      >
+                        <p className="teks-kebawah">Logout</p>
+                      </div>
+                    </div>
+                  </div>
+                  {/* dropdown */}
+
+                  {/* <li className="nav-item">
                     <Link className="nav-link" to="/pokemonfavorite">
                       My Pokémon
                     </Link>
@@ -107,7 +127,7 @@ function Navbar() {
                         Logout
                       </LoginButton>
                     </Link>
-                  </li>
+                  </li> */}
                 </>
               )}
             </ul>

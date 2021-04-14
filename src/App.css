@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600;1,700;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;600;700;800;900&display=swap");
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   color: #212227 !important;
-  background-color: #F4F4F6 !important;
+  background-color: #f4f4f6 !important;
 }
 
 .container-fluid {
@@ -12,14 +12,14 @@ body {
 }
 
 nav {
-  background-color: #F4F4F6 !important;
+  background-color: #f4f4f6 !important;
 }
 
 .navbar-brand {
-  font-family: 'Roboto Slab', serif;
+  font-family: "Roboto Slab", serif;
   font-weight: 900;
-  color: #C1292E !important;
-  transition: all .2s ease-in-out;
+  color: #c1292e !important;
+  transition: all 0.2s ease-in-out;
 }
 
 .navbar-brand:hover {
@@ -32,34 +32,34 @@ nav {
 }
 
 .nav-link:hover {
-  color: #C1292E !important;
+  color: #c1292e !important;
 }
 
 .ttl-container {
-  background-color: #C1292E;
-  color: #F4F4F6;
+  background-color: #c1292e;
+  color: #f4f4f6;
   padding: 15vw;
   padding-top: 25vw;
 }
 
 .title {
-  font-family: 'Roboto Slab', serif;
+  font-family: "Roboto Slab", serif;
   font-weight: 900;
 }
 
 p.subtitle {
   font-size: 23px;
-  color: #F4F4F6;
+  color: #f4f4f6;
 }
 
 .src-container {
   background-color: #212227;
-  color: #F4F4F6;
+  color: #f4f4f6;
   padding: 3vw;
 }
 
 .src-label {
-  font-family: 'Roboto Slab', serif;
+  font-family: "Roboto Slab", serif;
 }
 
 .crd-container {
@@ -82,7 +82,7 @@ p.subtitle {
 }
 
 .card-title {
-  font-family: 'Roboto Slab', serif;
+  font-family: "Roboto Slab", serif;
   font-weight: 900;
   text-transform: uppercase;
 }
@@ -96,7 +96,7 @@ p.subtitle {
 
 .poke-img {
   padding: 1rem;
-  object-fit: contain;  
+  object-fit: contain;
 }
 
 .badge {
@@ -114,66 +114,73 @@ p.subtitle {
   padding: 7px;
   padding-left: 13px;
   padding-right: 13px;
-  border: 2px solid #F4F4F6;
+  border: 2px solid #f4f4f6;
 }
 
 #electric-type {
-  background-color: #FFCB77;
-  color: #212227 !important; 
+  background-color: #ffcb77;
+  color: #212227 !important;
 }
 
-#fire-type, #fighting-type {
-  background-color: #C1292E;
-  color: #F4F4F6 !important; 
+#fire-type,
+#fighting-type {
+  background-color: #c1292e;
+  color: #f4f4f6 !important;
 }
 
 #water-type {
-  background-color: #227C9D;
-  color: #F4F4F6 !important; 
+  background-color: #227c9d;
+  color: #f4f4f6 !important;
 }
 
 #dark-type {
   background-color: #212227;
-  color: #F4F4F6 !important; 
+  color: #f4f4f6 !important;
 }
 
-#fairy-type, #psychic-type {
-  background-color: #FF6392;
-  color: #212227 !important; 
+#fairy-type,
+#psychic-type {
+  background-color: #ff6392;
+  color: #212227 !important;
 }
 
-#ground-type, #rock-type {
-  background-color: #553D36;
-  color: #F4F4F6 !important; 
+#ground-type,
+#rock-type {
+  background-color: #553d36;
+  color: #f4f4f6 !important;
 }
 
-#grass-type, #bug-type {
-  background-color: #5C8001;
-  color: #F4F4F6 !important; 
+#grass-type,
+#bug-type {
+  background-color: #5c8001;
+  color: #f4f4f6 !important;
 }
 
-#ice-type, #flying-type {
-  background-color: #90E0EF;
-  color: #212227 !important; 
+#ice-type,
+#flying-type {
+  background-color: #90e0ef;
+  color: #212227 !important;
 }
 
-#poison-type, #ghost-type {
-  background-color: #81559B;
-  color: #F4F4F6 !important; 
+#poison-type,
+#ghost-type {
+  background-color: #81559b;
+  color: #f4f4f6 !important;
 }
 
 #dragon-type {
-  background-color: #704E2E;
-  color: #F4F4F6 !important; 
+  background-color: #704e2e;
+  color: #f4f4f6 !important;
 }
 
-#steel-type, #normal-type {
-  background-color: #AEA3B0;
-  color: #F4F4F6 !important; 
+#steel-type,
+#normal-type {
+  background-color: #aea3b0;
+  color: #f4f4f6 !important;
 }
 
 .dt-ttl-container {
-  color: #F4F4F6;
+  color: #f4f4f6;
   text-align: end;
 }
 
@@ -183,7 +190,7 @@ p.subtitle {
 }
 
 .dt-poke-name {
-  font-family: 'Roboto Slab', serif;
+  font-family: "Roboto Slab", serif;
   text-transform: uppercase;
   font-weight: 900;
 }
@@ -237,8 +244,8 @@ p.subtitle {
 
 .regis-link {
   text-decoration: none;
-  color: #F4F4F6;
-  transition: all .2s ease-in-out;
+  color: #f4f4f6;
+  transition: all 0.2s ease-in-out;
 }
 
 .regis-footer {
@@ -252,7 +259,7 @@ p.subtitle {
   /* display: flex; */
   padding: 1rem;
   /* float: right !important; */
-  right: .1vw;
+  right: 0.1vw;
   position: absolute;
   /* display: none; */
 }
@@ -261,11 +268,11 @@ p.subtitle {
   background-color: #c1292e !important;
   padding: 5px;
   text-align: center;
-  color: #F4F4F6;
+  color: #f4f4f6;
 }
 
 /* DESKTOP ONLY */
-@media (min-width: 768px) { 
+@media (min-width: 768px) {
   .navbar-nav {
     display: flex !important;
     align-items: center !important;
@@ -287,8 +294,58 @@ p.subtitle {
   }
 }
 
+/* navbar dropdown */
+.kebawah-tombol {
+  background-image: linear-gradient(0deg, #c1292e, #c1292e);
+  color: white;
+  font-size: 16px;
+  padding: 8px;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  margin-left: 10px;
+  border: 1px solid #a7ceff;
+}
+
+.kebawah {
+  position: relative;
+  display: inline-block;
+  background-color: "red" !important;
+}
+
+.kebawah-content {
+  display: none;
+
+  position: absolute;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  background-image: linear-gradient(0deg, #c1292e, #c1292e);
+}
+
+.kebawah-content .teks-kebawah {
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding: 12px 16px;
+}
+
+.kebawah-content .teks-kebawah:hover {
+  background-color: #f1f1f1;
+}
+
+.kebawah:hover .kebawah-content {
+  display: block;
+}
+
+.kebawah:hover .kebawah-tombol {
+  background-color: #0071ff;
+}
+
+/* end navbar dropdown */
+
 /* MOBILE ONLY */
-@media (max-width: 768px) { 
+@media (max-width: 768px) {
   .ttl-container {
     text-align: center;
   }
@@ -319,7 +376,7 @@ p.subtitle {
   .card-title {
     text-align: center;
   }
-  
+
   .btn-fav {
     margin-bottom: 10px;
   }

@@ -34,14 +34,6 @@ const PokemonFavorite = () => {
                     className="card poke-card fav-card"
                     style={{ width: "18rem" }}
                   >
-                    <div className="btn-remove-container">
-                      <button
-                        className="btn btn-danger btn-sm btn-remove"
-                        onClick={() => handleRemove(removeFavorite)}
-                      >
-                        Remove
-                      </button>
-                    </div>
                     <div className="img-container">
                       <img
                         className="card-img-top poke-img"
@@ -79,7 +71,15 @@ const PokemonFavorite = () => {
                         </span>
                       </h6>
                       {/* </p> */}
-                      <button className="btn btn-primary">Add To Battle</button>
+                      {/* <button className="btn btn-primary">Add To Battle</button> */}
+                      <div>
+                        <button
+                          className="btn btn-danger btn-sm btn-remove"
+                          onClick={() => handleRemove(removeFavorite)}
+                        >
+                          Remove
+                        </button>
+                      </div>
                       <br />
                       <br />
                     </div>
