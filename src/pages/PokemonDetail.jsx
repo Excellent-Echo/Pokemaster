@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import pokemonAction from "../redux/actions/pokemonActions";
 import { pokemonFavorite } from "../redux/actions/pokemonActions";
@@ -17,10 +17,10 @@ import {
 
 const PokemonDetail = () => {
   const dispatch = useDispatch();
+  const history = useHistory();
 
   // show detail data pokemon
   const listPokemonDetail = useSelector((state) => state.pokemon.detail);
-  // console.log("ini list Pokemon Detail", listPokemonDetail);
   const { name } = useParams();
   useEffect(() => {
     dispatch(pokemonAction.fetchPokemonDetail(name));
@@ -28,8 +28,7 @@ const PokemonDetail = () => {
   }, [dispatch]);
 
   // fungsi klik untuk favorite pokomon
-  function handleClick(event) {
-    // console.log(event);
+  const handleClick = (event) => {
     if (listPokemonDetail === "") {
       Swal.fire({
         icon: "error",
@@ -47,7 +46,19 @@ const PokemonDetail = () => {
         timer: 1500,
       });
     }
-  }
+  };
+
+  // fungsi klik untuk login terlebih dahulu
+  const handleLogin = () => {
+    Swal.fire({
+      position: "center",
+      icon: "error",
+      title: "Login dulu ya",
+      showConfirmButton: false,
+      timer: 1500,
+    });
+    history.push("/login");
+  };
 
   let PokeWeight = (weight) => {
     parseFloat(weight).toFixed(2);
@@ -89,9 +100,15 @@ const PokemonDetail = () => {
                     </Link>
                   </div>
                   <div className="col-md">
-                    <FavButton onClick={() => handleClick(listPokemonDetail)}>
-                      Favourite {listPokemonDetail.name}
-                    </FavButton>
+                    {!localStorage.getItem("accessToken") ? (
+                      <FavButton onClick={handleLogin}>
+                        Favourite {listPokemonDetail.name}
+                      </FavButton>
+                    ) : (
+                      <FavButton onClick={() => handleClick(listPokemonDetail)}>
+                        Favourite {listPokemonDetail.name}
+                      </FavButton>
+                    )}
                   </div>
                 </div>
                 <br />
