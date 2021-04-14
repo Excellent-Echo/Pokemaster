@@ -1,8 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { setLoginActions } from "../redux/actions/userAction";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 const Login = () => {
+  const dispatch = useDispatch();
+  const history = useHistory();
+
+  const [login, setLogin] = useState({
+    email: "",
+    password: "",
+  });
+
+  const handleChange = (e) => {
+    setLogin({
+      ...login,
+      [e.target.name]: e.target.value,
+    });
+    // console.log(login);
+  };
+
+  const handleSubmit = (event) => {
+    dispatch(setLoginActions(login, event, history));
+  };
+
   const FormButton = styled.button`
     cursor: pointer;
     background: #ffcb77;
@@ -50,13 +72,15 @@ const Login = () => {
                         All Fields Are Required
                       </span>
                     </h5>
-                    <form>
+                    <form onSubmit={handleSubmit}>
                       <div className="form-floating">
                         <input
                           type="email"
                           className="form-control"
-                          id="email"
                           placeholder="ash@poke.info"
+                          name="email"
+                          value={login.email}
+                          onChange={(e) => handleChange(e)}
                           required
                         />
                         <label>Email</label>
@@ -65,8 +89,10 @@ const Login = () => {
                         <input
                           type="password"
                           className="form-control"
-                          id="password"
                           placeholder="Password"
+                          name="password"
+                          value={login.password}
+                          onChange={(e) => handleChange(e)}
                           required
                         />
                         <label>Password</label>

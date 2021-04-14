@@ -1,35 +1,41 @@
 import {
   USER_REGISTER,
   USER_LOGIN,
-  USER_ERROR,
-  USER_INFO,
+  USER_LOGOUT,
 } from "../actionsType/userType";
 
-const initialState = {
-  isLogged: true,
-  data: [],
-  error: null,
-};
+const token = localStorage.getItem("accessToken");
+// console.log("ini token", token);
+
+const initialState = token
+  ? {
+      isLogged: true,
+      data: [],
+      error: null,
+    }
+  : {
+      isLogged: false,
+      data: [],
+      error: null,
+    };
+
+// console.log("ini initialState", initialState);
 
 const userReducer = (state = initialState, action) => {
   switch (action.type) {
     case USER_REGISTER:
       return {
-        dataRegister: action.payload,
+        registerData: action.payload,
       };
     case USER_LOGIN:
       return {
         ...state,
         isLogged: true,
       };
-    case USER_ERROR:
+    case USER_LOGOUT:
       return {
         ...state,
-        error: action.payload,
-      };
-    case USER_INFO:
-      return {
-        data: action.payload,
+        isLogged: false,
       };
     default:
       return state;
