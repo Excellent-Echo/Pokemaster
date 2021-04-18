@@ -2,6 +2,7 @@ import {
   USER_REGISTER,
   USER_LOGIN,
   USER_LOGOUT,
+  // USER_INFO,
 } from "../actionsType/userType";
 
 const token = localStorage.getItem("accessToken");
@@ -37,6 +38,11 @@ const userReducer = (state = initialState, action) => {
         ...state,
         isLogged: false,
       };
+    // case USER_INFO:
+    //   return {
+    //     ...state,
+    //     data: action.payload,
+    //   };
     default:
       return state;
   }

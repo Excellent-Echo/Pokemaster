@@ -2,6 +2,7 @@ import {
   USER_REGISTER,
   USER_LOGIN,
   USER_LOGOUT,
+  // USER_INFO,
 } from "../actionsType/userType";
 import axios from "../../APIs/userApi";
 import Swal from "sweetalert2";
@@ -74,7 +75,7 @@ export const setLoginActions = (values, event, history) => async (dispatch) => {
 
     let user = login.data.filter((item) => item.email === values.email);
 
-    console.log(user);
+    console.log("ini user", user);
     if (!user.length > 0)
       return Swal.fire({
         title: "Gagal Login",
@@ -106,6 +107,7 @@ export const setLoginActions = (values, event, history) => async (dispatch) => {
         timer: 3000,
       });
       await history.push("/");
+      window.location.reload();
     } else {
       Swal.fire({
         title: "Gagal Login",
@@ -124,6 +126,24 @@ export const userLogoutActions = (history) => {
     dispatch({
       type: USER_LOGOUT,
     });
-    history.push("/login");
+    history.push("/");
   };
 };
+
+// export const getUserInfoActions = () => async (dispatch) => {
+//   try {
+//     let test = localStorage.getItem("accessToken");
+//     const userInfo = await axios({
+//       method: "get",
+//       url: "/users",
+//       data: test,
+//     });
+//     console.log("ini userinfo", userInfo.data);
+//     dispatch({
+//       type: USER_INFO,
+//       payload: userInfo.data,
+//     });
+//   } catch (error) {
+//     console.log("error", error);
+//   }
+// };
